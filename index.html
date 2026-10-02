@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>သီတင်းကျွတ်အမှီလေး... ❤️</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Padauk:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Padauk', 'Poppins', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* Solid Dark Night Sky Background (Gradient မဟုတ်တော့ပါ) */
+            background-color: #0d0914;
+            padding: 20px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .floating-element {
+            position: absolute;
+            font-size: 22px;
+            color: rgba(255, 215, 0, 0.85);
+            user-select: none;
+            pointer-events: none;
+            animation: floatUp 9s linear infinite;
+            text-shadow: 0 0 12px rgba(255, 215, 0, 0.9);
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) rotate(0deg) scale(0.8); opacity: 1; }
+            100% { transform: translateY(-100px) rotate(360deg) scale(1.2); opacity: 0; }
+        }
+
+        .card {
+            background: rgba(23, 16, 36, 0.95);
+            border: 2px solid rgba(212, 175, 55, 0.4);
+            padding: 35px 25px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(212, 175, 55, 0.15);
+            text-align: center;
+            max-width: 420px;
+            width: 100%;
+            position: relative;
+            z-index: 10;
+        }
+
+        .gif-wrapper {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 20px;
+            position: relative;
+            /* လေးထောင့် အဝိုင်းပုံစံ (Rounded Square) */
+            border-radius: 20px;
+            padding: 6px;
+            background: #1f162e;
+            border: 2px solid #d4af37;
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+        }
+
+        .gift-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* GIF လည်း လေးထောင့်အဝိုင်း */
+            border-radius: 14px;
+            background: #fff;
+        }
+
+        h2 {
+            color: #f3e5f5;
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            line-height: 1.5;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .warning-container {
+            min-height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+
+        .warning-text {
+            color: #ffd54f;
+            font-size: 15px;
+            font-weight: 700;
+            background: rgba(40, 28, 58, 0.9);
+            padding: 10px 18px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 213, 79, 0.5);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            min-height: 80px;
+        }
+
+        button {
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-family: 'Padauk', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            outline: none;
+        }
+
+        .yes-btn {
+            background: #d4af37;
+            color: #1a0f2e;
+            font-size: 19px;
+            padding: 12px 26px;
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .yes-btn:hover {
+            background: #f5d77f;
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6);
+        }
+
+        .no-btn {
+            background: #c62828;
+            color: white;
+            font-size: 17px;
+            padding: 12px 26px;
+            box-shadow: 0 6px 18px rgba(198, 40, 40, 0.4);
+        }
+
+        .celebrate-title {
+            color: #ffd54f;
+            font-size: 23px;
+            font-weight: bold;
+            margin-top: 15px;
+            line-height: 1.5;
+        }
+
+        .celebrate-desc {
+            color: #e0e0e0;
+            font-size: 16px;
+            margin-top: 10px;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        /* ePostcard Button Styling */
+        .epostcard-btn {
+            background: linear-gradient(135deg, #ffb300, #f57c00);
+            color: #1a0f2e;
+            font-size: 17px;
+            padding: 10px 22px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-family: 'Padauk', sans-serif;
+            border: none;
+            cursor: pointer;
+            margin-top: 18px;
+            box-shadow: 0 6px 20px rgba(255, 179, 0, 0.4);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .epostcard-btn:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(255, 179, 0, 0.6);
+        }
+
+        /* Falling Floating Sticker / GIF */
+        .floating-gift-sticker {
+            position: fixed;
+            top: -120px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 130px;
+            height: 130px;
+            cursor: pointer;
+            z-index: 1000;
+            filter: drop-shadow(0 10px 15px rgba(255, 215, 0, 0.5));
+            animation: floatFall 4s ease-out forwards, wobble 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes floatFall {
+            0% { top: -120px; opacity: 0; }
+            30% { opacity: 1; }
+            100% { top: 40%; opacity: 1; }
+        }
+
+        @keyframes wobble {
+            0% { transform: translateX(-50%) rotate(-8deg); }
+            100% { transform: translateX(-50%) rotate(8deg); }
+        }
+
+        /* Letter Modal Overlay */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease;
+            padding: 20px;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Paper Style Love Letter */
+        .letter-paper {
+            background: #fffdf5;
+            background-image: linear-gradient(#e8e0d0 1px, transparent 1px);
+            background-size: 100% 28px;
+            color: #2c1810;
+            width: 100%;
+            max-width: 450px;
+            padding: 35px 30px;
+            border-radius: 12px;
+            border: 3px double #d4af37;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), 0 0 30px rgba(212, 175, 55, 0.3);
+            position: relative;
+            transform: scale(0.8) rotate(-2deg);
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-family: 'Padauk', serif;
+            line-height: 28px;
+            text-align: left;
+        }
+
+        .modal-overlay.active .letter-paper {
+            transform: scale(1) rotate(0deg);
+        }
+
+        .letter-header {
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: #8b0000;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 8px;
+        }
+
+        .letter-body {
+            font-size: 16px;
+            color: #3e2723;
+            margin-bottom: 20px;
+            white-space: pre-line;
+        }
+
+        .letter-footer {
+            text-align: right;
+            font-weight: bold;
+            color: #8b0000;
+            font-size: 16px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: transparent;
+            border: none;
+            font-size: 22px;
+            color: #8b0000;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="floating-element" style="left: 8%; animation-duration: 8s;">🏮</div>
+<div class="floating-element" style="left: 22%; animation-duration: 11s; animation-delay: 1s;">✨</div>
+<div class="floating-element" style="left: 42%; animation-duration: 9s; animation-delay: 2s;">🌟</div>
+<div class="floating-element" style="left: 68%; animation-duration: 10s; animation-delay: 0.5s;">🏮</div>
+<div class="floating-element" style="left: 88%; animation-duration: 12s; animation-delay: 1.5s;">✨</div>
+
+<div class="card" id="card">
+    <div class="gif-wrapper">
+        <img id="gift" class="gift-img" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnNxdXlrNXN6eHk2cnJpbGk5aGhwdmkxYXBkY3hzNXE1eTllNzQ4aSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/hMdJUH0z9PaQakSpSc/giphy.gif" alt="cute gif">
+    </div>
+    <h2>ဒီသီတင်းကျွတ်အမှီလေး ပြန်ချစ်ကြည့်ပါလား .. 🪔✨</h2>
+    <div class="warning-container">
+        <div id="warning" class="warning-text">သေချာလေး စဉ်းစားပါဦးနော်... 🥺✨</div>
+    </div>
+    <div class="btn-group">
+        <button id="yesBtn" class="yes-btn" onclick="sayYes()">ချစ်မယ် 💛</button>
+        <button id="noBtn" class="no-btn" onclick="sayNo()">ဟင့်အင်</button>
+    </div>
+</div>
+
+<!-- Love Letter Modal Overlay -->
+<div id="letterModal" class="modal-overlay">
+    <div class="letter-paper">
+        <button class="close-btn" onclick="closeLetter()">✕</button>
+        <div class="letter-header">🪔 သီတင်းကျွတ် ချစ်သက်သေစာလွှာ 💌</div>
+        <div class="letter-body">
+ချစ်ရပါသော... ❤️
+
+မြေပြင်မှာ လင်းထိန်နေတဲ့ ဆီမီးရောင်တွေထက် မင်းရဲ့ အပြုံးလေးတွေက ငါ့ကမ္ဘာကို ပိုပြီး လင်းလက်ပါတယ်တယ်။ 
+
+ဒီနှစ်တင်မကဘူး... နောင်လာမယ့် သီတင်းကျွတ်ပေါင်းများစွာမှာလည်း မင်းနဲ့အတူတူရှိချင်တယ်။
+
+အမြဲတမ်း ချစ်နေမှာပါနော်... 🥰✨
+        </div>
+        <div class="letter-footer">
+            မင်းကို အရမ်းချစ်သော... ❤️
+        </div>
+    </div>
+</div>
+
+<script>
+    // သင်၏ Formspree Link ကို ဒီနေရာတွင် ထည့်သွင်းနိုင်ပါသည်
+    const FORMSPREE_URL = "";
+
+    const gifs = [
+        "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWtla21iMGhqc2Q2ZDV2bjhrbGhvb252Mmp4NDlpajR6Z3oyeXdzcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/hMdJUH0z9PaQakSpSc/giphy.gif",
+        "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbzY0d295bzRzeTRhcXR6bnkzYXJxMWVtMDNhMmhwcnNpZTlieWRqYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/GfVnvgXvDEm9gCf87R/giphy.gif",
+        "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMWFtc3A3eXNreGhreW1qc2szZzBzaWI1ZHVxc3cybHNjbmlua21sMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/r8JJmICvSlsSN1BMNk/giphy.gif"
+    ];
+
+    const warnings = [
+        "တကယ်ပဲ ငြင်းမှာလား? 🥺",
+        "သီတင်းကျွတ်မှာ လက်တွဲမသွားချင်ဘူးလား... 💔",
+        "နောက်တစ်ခါ သေချာ စဉ်းစားပါဦး... ✨",
+        "မနှိပ်ပါနဲ့တော့...😭",
+        "'ချစ်မယ်' ဆိုတာလေးပဲ နှိပ်လိုက်ပါတော့... 🏮❤️"
+    ];
+
+    let yesScale = 1;
+    let noScale = 1;
+    let gifIndex = 0;
+    let noClickCount = 0;
+
+    function sayNo() {
+        noClickCount++;
+        gifIndex = (gifIndex + 1) % gifs.length;
+        document.getElementById('gift').src = gifs[gifIndex];
+
+        const randomWarning = warnings[Math.floor(Math.random() * warnings.length)];
+        document.getElementById('warning').innerText = randomWarning;
+
+        yesScale += 0.35;
+        noScale -= 0.15;
+        if (noScale < 0.2) noScale = 0.2;
+
+        document.getElementById('yesBtn').style.transform = `scale(${yesScale})`;
+        document.getElementById('noBtn').style.transform = `scale(${noScale})`;
+    }
+
+    function sayYes() {
+        // UI ပြောင်းလဲခြင်း - ePostcard ခလုတ်လေးပါ ထည့်သွင်းပေးထားပါသည်
+        document.getElementById('card').innerHTML = `
+            <div class="gif-wrapper">
+                <img class="gift-img" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTFyc2pvcjUxMXV3eGJ0YWZjNWE4YzBhZWluaDRpa3NvNXhkajFrOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xLE2bYZHgRg4hTpjmk/giphy.gif" alt="happy gif">
+            </div>
+            <div class="celebrate-title">ပျော်လိုက်တာ! ငါလည်း မင်းကို အရမ်းချစ်တယ်! 🥰✨</div>
+            <div class="celebrate-desc">ဒီနှစ် သီတင်းကျွတ်မှာ ချစ်ချစ်ခင်ခင်နေကြမယ်နော်... 🏮💛</div>
+            <button class="epostcard-btn" onclick="triggerEPostcard()">ePostcard ကြည့်မယ် ✉️✨</button>
+        `;
+
+        // Gmail ထံသို့ အကြောင်းကြားစာ ပို့ဆောင်ခြင်း
+        if(FORMSPREE_URL) {
+            fetch(FORMSPREE_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    message: "သူ 'ချစ်မယ်' ခလုတ်ကို နှိပ်လိုက်ပါပြီ! 🏮❤️🥰",
+                    no_clicked_times: `"ဟင့်အင်" ကို ${noClickCount} ကြိမ် နှိပ်ခဲ့ပါသည်။`,
+                    date: new Date().toLocaleString()
+                })
+            }).catch(err => console.log('Mail sent error:', err));
+        }
+    }
+
+    function triggerEPostcard() {
+        // ဖျက်ရန် ကျန်ရှိနေသော sticker ဟောင်းရှိပါက ဖျက်မည်
+        const existingSticker = document.getElementById('floatingSticker');
+        if (existingSticker) existingSticker.remove();
+
+        // ပေါ်လာမည့် No-frame Sticker GIF (Floating GIF)
+        const sticker = document.createElement('img');
+        sticker.id = 'floatingSticker';
+        sticker.className = 'floating-gift-sticker';
+        sticker.src = 'https://media.tenor.com/1F6DVPSqEgsAAAAi/rosas.gif'; 
+        sticker.title = 'နှိပ်လိုက်ပါဦး... 💌';
+
+        sticker.onclick = function() {
+            document.getElementById('letterModal').classList.add('active');
+            sticker.style.opacity = '0';
+            setTimeout(() => sticker.remove(), 500);
+        };
+
+        document.body.appendChild(sticker);
+    }
+
+    function closeLetter() {
+        document.getElementById('letterModal').classList.remove('active');
+    }
+</script>
+
+</body>
+</html>
